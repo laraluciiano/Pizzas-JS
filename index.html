@@ -8,11 +8,21 @@
 </head>
 <body>
     <script src="index.js"></script>
-    <input type="number" id="input">
-    <button id="boton">Capturar valor</button>
-    <div>
-        <h2>Nombre</h2>
-        <h3>Precio</h3>
-    </div>
+
+    <form class="add-form">
+        <div class="input-container">
+          <input
+            type="number"
+            class="input-number"
+            placeholder="Ingresá un valor"
+          />
+        </div>
+        <button class="add-btn">Capturar valor</button>
+      </form>
+
+      <div class="div-container">
+        <h2 id="nombre">Nombre</h2>
+        <h3 id="precio">Precio</h3>
+      </div>
 </body>
 </html>
