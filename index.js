@@ -36,6 +36,42 @@ const Pizzas = [
         precio: 1700
     }
 ]
+ 
+//EJERCICIO 2
+
+const resultSection = document.getElementById("result-section")
+const form = document.getElementById("form")
+const input = document.querySelector(".form-input")
+
+const searchPizza = (value) => Pizzas.find((Pizzas) => Pizzas.id === value)
+
+const showEmptyError = () => {
+    resultSection.innerHTML = `
+      <div class="showerrordiv">
+      <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+      <h2 class="error-text">Por favor ingresar un numero para poder buscar tu pizza.</h2>
+      </div>`
+}
+
+const renderResult = (Pizzas) => {
+    if (!Pizzas) {
+      resultSection.innerHTML = `
+      <div class="pizza-section">
+      <h2 class="error">No pudimos encontrar tu pizza </h2>
+      <p class="error-p">Proba con otro numero.</p>
+      </div>`
+    } else {
+      resultSection.innerHTML = `
+      <div class="pizza-section">
+      <h2 class="pizza-title">${Pizzas.nombre.toUpperCase()}</h2>
+      <p class="pizza-description">Ingredientes: ${Pizzas.ingredientes.join(", ")}.</p>
+      <h3 class="pizza-price"> Precio: $${Pizzas.precio} </h3>
+      </div>
+      `
+    }
+}
+ 
+//EJERCICIO 1
 
 // Pizzas impar
 
@@ -70,3 +106,5 @@ for (let index1 = 0; index1 < 3; index1++) {
     console.log(Pizzas[index].ingredientes[index1]);
     
 }}
+
+
